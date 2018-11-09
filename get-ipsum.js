@@ -18,7 +18,7 @@ const handler = async (event) => {
       texts = `${texts} ${item['content:encoded']}`;
     });
 
-    texts = texts.replace(/<(?:.|\n)*?>/gm, '').replace(/\n/g, ' ').replace(['.', ','], '').split(' ');
+    texts = texts.replace(/<(?:.|\n)*?>/gm, '').replace(/\n/g, ' ').replace(/\.|,/g, '').split(' ');
     textsCache = texts;
   }
 
